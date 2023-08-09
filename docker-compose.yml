@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+  db:
+    image: 'mysql:latest'
+    environment:
+      DATABASE_HOST: docker-mysql
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: moviedb
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: root
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/moviedb?autoReconnect=true&allowPublicKeyRetrieval=true&useSSL=false
+      SPRING_DATASOURCE_USERNAME: admin
+      SPRING_DATASOURCE_PASSWORD: root
+    ports:
+      - 3306
